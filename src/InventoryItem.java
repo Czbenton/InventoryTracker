@@ -26,8 +26,7 @@ public class InventoryItem {
         System.out.println("Please enter the item number you wish to remove");
         int itemNum = Integer.valueOf(Inventory.scanner.nextLine());
 
-        InventoryItem itemName = Inventory.items.get(itemNum - 1);
-        Inventory.items.remove(itemName);
+        Inventory.items.remove(itemNum -1);
     }
 
     public static void addItem() {
