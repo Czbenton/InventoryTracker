@@ -14,7 +14,7 @@ public class Inventory {
         while (true) {
             int i = 1;
             for (InventoryItem listItems : items) {
-                System.out.println( i + ". " + "[" + listItems.quantity + "] " + listItems.name);
+                System.out.println(i + ". " + "[" + listItems.quantity + "] " + listItems.name);
                 i++;
             }
             System.out.println("1. Add new item to your inventory.");
@@ -23,21 +23,25 @@ public class Inventory {
 
             String option = scanner.nextLine();
 
-            switch (option) {
-                case "1":
-                    InventoryItem.addItem();
-                    break;
-                case "2": {
-                    InventoryItem.removeItem();
-                    break;
-                }
-                case "3": {
-                    InventoryItem.changeQuantity();
-                    break;
-                }
-                default: {
-                    System.out.println("Please enter a valid option.\n");
-                }
+            optionSelect(option);
+        }
+    }
+
+    private static void optionSelect(String option) {
+        switch (option) {
+            case "1":
+                InventoryControl.addItem();
+                break;
+            case "2": {
+                InventoryControl.removeItem();
+                break;
+            }
+            case "3": {
+                InventoryControl.changeQuantity();
+                break;
+            }
+            default: {
+                System.out.println("Please enter a valid option.\n");
             }
         }
     }
